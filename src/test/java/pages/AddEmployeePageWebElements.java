@@ -54,6 +54,8 @@ public class AddEmployeePageWebElements extends BaseClass {
         CommonMethods.jsClick(addEmp.saveBtn);
     }
 
+
+
     public AddEmployeePageWebElements() {
         PageFactory.initElements(driver, this);
     }
