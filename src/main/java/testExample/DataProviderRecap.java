@@ -56,16 +56,19 @@ public class DataProviderRecap  {
     }
 
     @Test(dataProvider = "getData")
-    public void addEmployee(String name, String lastName)  {
+    public void addEmployee(String name, String lastName) throws InterruptedException {
         WebDriverWait wait=new WebDriverWait(driver,10);
 
         WebElement PIMButton =driver.findElement(By.id("menu_pim_viewPimModule"));
+        Thread.sleep(3000);
+
         wait.until(ExpectedConditions.elementToBeClickable(PIMButton));
         PIMButton.click();
 
 
         WebElement addEmpButton=driver.findElement(By.id("menu_pim_addEmployee"));
-        wait.until(ExpectedConditions.elementToBeClickable(addEmpButton));
+         Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOf(addEmpButton));
         addEmpButton.click();
 
 
